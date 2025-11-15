@@ -1,0 +1,25 @@
+From d7b4f9161fee1d1976531b1fdabc52dbef40492e Mon Sep 17 00:00:00 2001
+From: mahmoud-sayed33 <ma-sayedmohamed@elarabygroup.com>
+Date: Sat, 15 Nov 2025 17:25:20 +0200
+Subject: [PATCH] patching kernel: Adding custom welcome message
+
+---
+ init/main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/init/main.c b/init/main.c
+index 40d25d4f3..bbb845516 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -940,7 +940,7 @@ void start_kernel(void)
+ 	smp_prepare_boot_cpu();	/* arch-specific boot-cpu hooks */
+ 	early_numa_node_init();
+ 	boot_cpu_hotplug_init();
+-
++	pr_notice("################ Starting ATON Linux Kernel ##################\n");
+ 	pr_notice("Kernel command line: %s\n", saved_command_line);
+ 	/* parameters may set static keys */
+ 	parse_early_param();
+-- 
+2.34.1
+
