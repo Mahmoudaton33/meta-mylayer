@@ -1,0 +1,11 @@
+[Unit]
+Description=Stop psplash boot splash screen
+DefaultDependencies=no
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/psplash-write QUIT
+
+[Install]
+WantedBy=multi-user.target
